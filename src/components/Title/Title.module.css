@@ -1,0 +1,11 @@
+.title {
+
+  color: #e4e4e4;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 425px) {
+  .title {
+    text-align: center;
+  }
+}

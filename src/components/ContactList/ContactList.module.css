@@ -1,0 +1,12 @@
+.contactsList {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@media (max-width: 425px) {
+  .contactsList {
+    justify-content: center;
+  }
+}
