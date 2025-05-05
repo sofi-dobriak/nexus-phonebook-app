@@ -6,8 +6,8 @@
   max-width: 280px;
   padding: 20px;
   margin-bottom: 30px;
+  margin: 0 auto;
 }
-
 
 @media (max-width: 425px) {
   .form {
@@ -49,4 +49,8 @@
 .error {
   color: #ff647c;
   font-size: 12px;
+}
+
+.registrationPageTitle {
+  margin-bottom: 20px;
 }
