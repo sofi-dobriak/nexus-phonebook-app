@@ -54,3 +54,8 @@
 .registrationPageTitle {
   margin-bottom: 20px;
 }
+
+.registerButton {
+  min-width: 200px;
+  padding: 12px;
+}

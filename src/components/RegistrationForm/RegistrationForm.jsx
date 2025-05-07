@@ -24,13 +24,12 @@ const RegistrationForm = () => {
 
   const handleSubmit = (values, action) => {
     const newContact = {
-      username: values.username,
+      name: values.username,
       email: values.email,
       password: values.password,
     };
 
     dispatch(register(newContact));
-    console.log(newContact);
 
     action.resetForm();
   };
@@ -76,7 +75,9 @@ const RegistrationForm = () => {
           <ErrorMessage name='password' className={styles.error} component='div' />
         </div>
 
-        <button type='submit'>Register</button>
+        <button type='submit' className={styles.registerButton}>
+          Register
+        </button>
       </Form>
     </Formik>
   );

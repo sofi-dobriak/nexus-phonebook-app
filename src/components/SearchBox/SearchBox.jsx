@@ -1,15 +1,47 @@
-import s from './SearchBox.module.css';
+import { useDispatch } from 'react-redux';
+import styles from './SearchBox.module.css';
 import { useId } from 'react';
+import { changeFilterName, changeFilterPhone } from '../../redux/filters/slice';
 
 const SearchBox = () => {
-  const filterInputID = useId();
+  const dispatch = useDispatch();
+
+  const nameInputID = useId();
+  const phoneInputID = useId();
+
+  const handleFilterContactByName = e => {
+    dispatch(changeFilterName(e.target.value));
+  };
+
+  const handleFilterContactByPhone = e => {
+    dispatch(changeFilterPhone(e.target.value));
+  };
 
   return (
-    <section className={s.searchFormSection}>
-      <label className={s.label} htmlFor={filterInputID}>
-        Find contacts by name
-      </label>
-      <input className={s.input} placeholder='Mark' id={filterInputID}></input>
+    <section className={styles.searchFormSection}>
+      <div className={styles.labelInputContainer}>
+        <label className={styles.label} htmlFor={nameInputID}>
+          Find contact <strong>by name</strong>
+        </label>
+        <input
+          id={nameInputID}
+          placeholder='Mark'
+          className={styles.input}
+          onChange={handleFilterContactByName}
+        ></input>
+      </div>
+
+      <div className={styles.labelInputContainer}>
+        <label className={styles.label} htmlFor={phoneInputID}>
+          Find contact <strong>by phone</strong>
+        </label>
+        <input
+          id={phoneInputID}
+          placeholder='111-11-11'
+          className={styles.input}
+          onChange={handleFilterContactByPhone}
+        ></input>
+      </div>
     </section>
   );
 };

@@ -1,0 +1,22 @@
+.backToTopButton {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 2px;
+  transform: translateY(50px);
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.backToTopIcon {
+  font-size: 30px;
+}

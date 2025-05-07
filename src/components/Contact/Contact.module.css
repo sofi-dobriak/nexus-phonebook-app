@@ -6,8 +6,7 @@
   border: 1px solid rgba(228, 228, 228, 0.6);
   border-radius: 8px;
   background-color: transparent;
-  width: 100%;
-  max-width: 340px;
+  min-width: 280px;
 }
 
 .contactButtonContainer {
@@ -28,6 +27,31 @@
   gap: 8px;
 }
 
-.button {
+.buttonsContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.editButton,
+.deleteButton {
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.editButton {
+  background-color: #00c48c;
+}
+
+.deleteButton {
+  background-color: #FF647C;
+}
+
+.editIcon,
+.deleteIcon {
+  font-size: 20px;
 }

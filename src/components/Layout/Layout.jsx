@@ -1,7 +1,11 @@
-import styles from './Layout.module.css';
+import AppBar from '../AppBar/AppBar';
 
 const Layout = () => {
-  return <div>Layout</div>;
+  return (
+    <header>
+      <AppBar />
+    </header>
+  );
 };
 
 export default Layout;

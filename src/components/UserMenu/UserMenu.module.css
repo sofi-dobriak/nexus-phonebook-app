@@ -1,0 +1,14 @@
+.userMenuContainer {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.logOutButton {
+  padding: 12px;
+  min-width: 120px;
+}
+
+.name {
+  color: #fff;
+}

@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/contacts/operations';
+import { openModal } from '../../redux/modals/slice';
 
 const FeedbackSchema = Yup.object().shape({
   contactName: Yup.string().min(2, 'Too Short!').max(16, 'Too Long!').required('Required'),
@@ -29,6 +30,7 @@ const ContactForm = () => {
       })
     );
 
+    dispatch(openModal({ modalKey: 'isAddMessageModalOpen' }));
     actions.resetForm();
   };
 
@@ -55,7 +57,9 @@ const ContactForm = () => {
           <ErrorMessage name='contactPhone' component='span' className={s.error} />
         </div>
 
-        <button type='submit'>Add contact</button>
+        <button type='submit' className={s.addContatcButton}>
+          Add contact
+        </button>
       </Form>
     </Formik>
   );

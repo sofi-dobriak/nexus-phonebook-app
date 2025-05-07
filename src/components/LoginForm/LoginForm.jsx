@@ -1,18 +1,19 @@
 import styles from './LoginForm.module.css';
-
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { login } from '../../redux/auth/operations';
 
 const initialValues = {
-  username: '',
+  email: '',
   password: '',
 };
 
+const emailRegular = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 const validationSchema = Yup.object().shape({
-  username: Yup.string().min(2, 'Too Short!').max(16, 'Too Long!').required('Required'),
-  password: Yup.string().min(7, 'Minimum 7 symbols').required('Required'),
+  email: Yup.string().matches(emailRegular, 'Wrong email format').required('Required'),
+  password: Yup.string().min(7, 'Minimum 7 characters').required('Required'),
 });
 
 const LoginForm = () => {
@@ -20,12 +21,11 @@ const LoginForm = () => {
 
   const handleSubmit = (values, action) => {
     const newContact = {
-      username: values.username,
+      email: values.email,
       password: values.password,
     };
 
     dispatch(login(newContact));
-    console.log(newContact);
 
     action.resetForm();
   };
@@ -37,11 +37,16 @@ const LoginForm = () => {
     >
       <Form className={styles.form}>
         <div className={styles.labelInputContainer}>
-          <label className={styles.label} htmlFor='username'>
-            Username
+          <label className={styles.label} htmlFor='email'>
+            Email
           </label>
-          <Field className={styles.input} type='text' name='username' placeholder='Mark Tven' />
-          <ErrorMessage name='username' className={styles.error} component='div' />
+          <Field
+            type='email'
+            name='email'
+            className={styles.input}
+            placeholder='mark.tven@mail.com'
+          />
+          <ErrorMessage name='email' className={styles.error} component='div' />
         </div>
 
         <div className={styles.labelInputContainer}>
@@ -58,7 +63,9 @@ const LoginForm = () => {
           <ErrorMessage name='password' className={styles.error} component='div' />
         </div>
 
-        <button type='submit'>Register</button>
+        <button type='submit' className={styles.loginButton}>
+          Login
+        </button>
       </Form>
     </Formik>
   );

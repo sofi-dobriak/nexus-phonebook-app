@@ -14,6 +14,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { modalsReducers } from './modals/slice';
 
 const authPersistConfig = {
   key: 'auth',
@@ -21,11 +22,18 @@ const authPersistConfig = {
   whitelist: ['token'],
 };
 
+const contactsPersistConfig = {
+  key: 'contacts',
+  version: 1,
+  storage,
+};
+
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
-    contacts: contactsReducer,
+    contacts: persistReducer(contactsPersistConfig, contactsReducer),
     filters: filtersReducer,
+    modals: modalsReducers,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

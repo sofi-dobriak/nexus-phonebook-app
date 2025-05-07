@@ -50,3 +50,8 @@
   color: #ff647c;
   font-size: 12px;
 }
+
+.addContatcButton {
+  padding: 12px;
+  min-width: 200px;
+}

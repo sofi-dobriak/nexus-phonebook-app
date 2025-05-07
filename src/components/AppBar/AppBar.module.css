@@ -1,10 +1,16 @@
+.headerBg {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #101216b2;
+  backdrop-filter: blur(3px);
+}
+
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  padding-top: 0;
-  margin-bottom: 30px;
-  box-shadow: 0px 4px 6px rgba(83, 91, 242, 0.3);
   border-radius: 4px;
+
 }

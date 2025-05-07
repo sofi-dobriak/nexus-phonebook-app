@@ -1,0 +1,9 @@
+.navigationContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.active {
+  color: #6979f8;
+}
