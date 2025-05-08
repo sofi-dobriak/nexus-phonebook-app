@@ -18,21 +18,16 @@ import { modalsReducers } from './modals/slice';
 
 const authPersistConfig = {
   key: 'auth',
-  version: 1,
   storage,
   whitelist: ['token'],
 };
 
-const contactsPersistConfig = {
-  key: 'contacts',
-  version: 1,
-  storage,
-};
+const persistedAuthReducer = persistReducer(authPersistConfig, authReducer);
 
 export const store = configureStore({
   reducer: {
-    auth: persistReducer(authPersistConfig, authReducer),
-    contacts: persistReducer(contactsPersistConfig, contactsReducer),
+    auth: persistedAuthReducer,
+    contacts: contactsReducer,
     filters: filtersReducer,
     modals: modalsReducers,
   },

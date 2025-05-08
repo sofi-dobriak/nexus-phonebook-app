@@ -19,7 +19,12 @@ const slice = createSlice({
         state.error = null;
         state.contacts = action.payload;
       })
-      .addCase(logout.fulfilled, () => initialState)
+
+      .addCase(logout.fulfilled, state => {
+        state.contacts = [];
+        state.isLoading = false;
+        state.error = null;
+      })
 
       .addCase(addContact.fulfilled, (state, action) => {
         state.contacts.push(action.payload);
