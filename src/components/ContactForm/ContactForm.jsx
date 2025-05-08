@@ -1,4 +1,4 @@
-import s from './ContactForm.module.css';
+import styles from './ContactForm.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
@@ -6,8 +6,8 @@ import { addContact } from '../../redux/contacts/operations';
 import { openModal } from '../../redux/modals/slice';
 
 const FeedbackSchema = Yup.object().shape({
-  contactName: Yup.string().min(2, 'Too Short!').max(16, 'Too Long!').required('Required'),
-  contactPhone: Yup.string()
+  name: Yup.string().min(2, 'Too Short!').max(16, 'Too Long!').required('Required'),
+  number: Yup.string()
     .matches(/^[\d-]+$/, 'Phone number must contain only digits')
     .min(5, 'Too Short!')
     .max(15, 'Too Long!')
@@ -15,8 +15,8 @@ const FeedbackSchema = Yup.object().shape({
 });
 
 const initializedValue = {
-  contactName: '',
-  contactPhone: '',
+  name: '',
+  number: '',
 };
 
 const ContactForm = () => {
@@ -25,10 +25,12 @@ const ContactForm = () => {
   const handleSubmit = (values, actions) => {
     dispatch(
       addContact({
-        name: values.contactName,
-        number: values.contactPhone,
+        name: values.name,
+        number: values.number,
       })
     );
+
+    console.log('Added:', values);
 
     dispatch(openModal({ modalKey: 'isAddMessageModalOpen' }));
     actions.resetForm();
@@ -40,27 +42,29 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       validationSchema={FeedbackSchema}
     >
-      <Form className={s.form}>
-        <div className={s.labelInputContainer}>
-          <label className={s.label} htmlFor='contactName'>
-            Name
-          </label>
-          <Field className={s.input} type='text' name='contactName' placeholder='Mark' />
-          <ErrorMessage name='contactName' component='span' className={s.error} />
-        </div>
+      {({ isValid, dirty }) => (
+        <Form className={styles.form}>
+          <div className={styles.labelInputContainer}>
+            <label className={styles.label} htmlFor='name'>
+              Name
+            </label>
+            <Field className={styles.input} type='text' name='name' placeholder='Mark' />
+            <ErrorMessage name='name' component='span' className={styles.error} />
+          </div>
 
-        <div className={s.labelInputContainer}>
-          <label className={s.label} htmlFor='contactPhone'>
-            Number
-          </label>
-          <Field className={s.input} type='tel' name='contactPhone' placeholder='111-11-11' />
-          <ErrorMessage name='contactPhone' component='span' className={s.error} />
-        </div>
+          <div className={styles.labelInputContainer}>
+            <label className={styles.label} htmlFor='number'>
+              Number
+            </label>
+            <Field className={styles.input} type='tel' name='number' placeholder='111-11-11' />
+            <ErrorMessage name='number' component='span' className={styles.error} />
+          </div>
 
-        <button type='submit' className={s.addContatcButton}>
-          Add contact
-        </button>
-      </Form>
+          <button type='submit' className={styles.addContatcButton} disabled={!(isValid && dirty)}>
+            Add contact
+          </button>
+        </Form>
+      )}
     </Formik>
   );
 };

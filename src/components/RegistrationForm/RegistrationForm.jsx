@@ -4,6 +4,7 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/operations';
+import { Link } from 'react-router-dom';
 
 const initialValues = {
   username: '',
@@ -39,46 +40,52 @@ const RegistrationForm = () => {
       onSubmit={handleSubmit}
       validationSchema={validationSchema}
     >
-      <Form className={styles.form}>
-        <div className={styles.labelInputContainer}>
-          <label className={styles.label} htmlFor='username'>
-            Username
-          </label>
-          <Field className={styles.input} type='text' name='username' placeholder='Mark Tven' />
-          <ErrorMessage name='username' className={styles.error} component='div' />
-        </div>
+      {({ isValid, dirty }) => (
+        <Form className={styles.form}>
+          <div className={styles.labelInputContainer}>
+            <label className={styles.label} htmlFor='username'>
+              Username
+            </label>
+            <Field className={styles.input} type='text' name='username' placeholder='Mark Tven' />
+            <ErrorMessage name='username' className={styles.error} component='div' />
+          </div>
 
-        <div className={styles.labelInputContainer}>
-          <label className={styles.label} htmlFor='email'>
-            Email
-          </label>
-          <Field
-            type='email'
-            name='email'
-            className={styles.input}
-            placeholder='mark.tven@mail.com'
-          />
-          <ErrorMessage name='email' className={styles.error} component='div' />
-        </div>
+          <div className={styles.labelInputContainer}>
+            <label className={styles.label} htmlFor='email'>
+              Email
+            </label>
+            <Field
+              type='email'
+              name='email'
+              className={styles.input}
+              placeholder='mark.tven@mail.com'
+            />
+            <ErrorMessage name='email' className={styles.error} component='div' />
+          </div>
 
-        <div className={styles.labelInputContainer}>
-          <label className={styles.label} htmlFor='password'>
-            Password
-          </label>
-          <Field
-            className={styles.input}
-            type='password'
-            name='password'
-            placeholder='Enter password'
-            autoComplete='false'
-          />
-          <ErrorMessage name='password' className={styles.error} component='div' />
-        </div>
+          <div className={styles.labelInputContainer}>
+            <label className={styles.label} htmlFor='password'>
+              Password
+            </label>
+            <Field
+              className={styles.input}
+              type='password'
+              name='password'
+              placeholder='Enter password'
+              autoComplete='false'
+            />
+            <ErrorMessage name='password' className={styles.error} component='div' />
+          </div>
 
-        <button type='submit' className={styles.registerButton}>
-          Register
-        </button>
-      </Form>
+          <button type='submit' className={styles.registerButton} disabled={!(isValid && dirty)}>
+            Register
+          </button>
+
+          <Link to='/login' className={styles.linkToLoginPage}>
+            Already have an account? Log in!
+          </Link>
+        </Form>
+      )}
     </Formik>
   );
 };

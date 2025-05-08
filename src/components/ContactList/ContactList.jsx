@@ -16,7 +16,7 @@ const ContactList = () => {
 
   return (
     <>
-      {hasContacts && !isLoading && !isError && (
+      {hasContacts && (
         <ul className={s.contactsList}>
           {visibleContacts.map(({ id, name, number }) => (
             <Contact key={id} id={id} name={name} number={number} />

@@ -1,4 +1,70 @@
 .container {
   display: flex;
+  align-items: center;
   justify-content: center;
+  gap: 40px;
+  margin-top: 120px;
+  margin-bottom: 40px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.desc {
+  text-align: center;
+  font-style: italic;
+  font-size: 18px;
+}
+
+.textReactProject,
+.textContainer {
+  margin: auto;
+  margin-bottom: 20px;
+  max-width: 900px;
+}
+
+.textIcon {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.infiniteIcon {
+  color: #6979f8;
+  padding-top: 4px;
+  font-size: 20px;
+}
+
+.appNameDesc {
+  border-left: 2px solid #6979f8;
+  border-radius: 1px;
+  padding-left: 12px;
+}
+
+.linkTextContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.stayInTouchContainer {
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.87);
+  max-width: 900px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.toLoginPageLink,
+.socialLink {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.postScriptum {
+  max-width: 900px;
+  margin: 0 auto;
+  margin-bottom: 30px;
 }

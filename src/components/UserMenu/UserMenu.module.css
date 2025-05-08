@@ -1,14 +1,50 @@
 .userMenuContainer {
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 20px;
 }
 
+
+
 .logOutButton {
-  padding: 12px;
-  min-width: 120px;
+  padding: 8px;
+  min-width: 90px;
 }
 
 .name {
   color: #fff;
+}
+
+.burgerButton {
+  background-color: transparent;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+
+    svg {
+      color: #6979f8;
+    }
+  }
+
+
+}
+
+.burgerIcon {
+  font-size: 20px;
+  transition: color .3s ease;
+}
+
+@media (max-width:768px) {
+  .userMenuContainer {
+    gap: 0;
+  }
+
+  .name {
+    margin-left: auto;
+  }
 }

@@ -1,12 +1,11 @@
 .form {
   border: 1px solid rgba(228, 228, 228, 0.6);
   border-radius: 8px;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
   max-width: 280px;
   padding: 20px;
   margin-bottom: 30px;
-  margin: 0 auto;
 }
 
 @media (max-width: 425px) {
@@ -33,7 +32,6 @@
   background-color: transparent;
   padding: 8px;
   transition: border-color .25s ease;
-  margin-bottom: 4px;
 
   &::placeholder {
     font-size: 14px;
@@ -56,6 +54,22 @@
 }
 
 .registerButton {
-  min-width: 200px;
-  padding: 12px;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+
+  &:disabled {
+    cursor: no-drop;
+    background-color: #6E6E6E;
+  }
+}
+
+
+.linkToLoginPage {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: inherit;
 }

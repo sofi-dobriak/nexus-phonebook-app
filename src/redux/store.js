@@ -18,6 +18,7 @@ import { modalsReducers } from './modals/slice';
 
 const authPersistConfig = {
   key: 'auth',
+  version: 1,
   storage,
   whitelist: ['token'],
 };

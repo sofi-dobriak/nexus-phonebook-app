@@ -2,7 +2,9 @@ import MessageModal from '../MessageModal/MessageModal';
 
 const DeleteMessageModal = () => {
   return (
-    <MessageModal modalKey='isDeleteMessageModalOpen'>Contact successfully deleted</MessageModal>
+    <MessageModal modalKey='isDeleteMessageModalOpen'>
+      Contact successfully <strong>deleted</strong>
+    </MessageModal>
   );
 };
 

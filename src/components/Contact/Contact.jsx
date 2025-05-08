@@ -28,7 +28,10 @@ const Contact = ({ id, name, number }) => {
           <button
             onClick={() =>
               dispatch(
-                openModal({ modalKey: 'isUpdateContactModalOpen', payload: { id, name, number } })
+                openModal({
+                  modalKey: 'isUpdateContactModalOpen',
+                  payload: { id, name, number },
+                })
               )
             }
             className={styles.editButton}
@@ -37,9 +40,7 @@ const Contact = ({ id, name, number }) => {
           </button>
           <button
             onClick={() =>
-              dispatch(
-                openModal({ modalKey: 'isConfirmDeleteModalOpen', payload: { id } })
-              )
+              dispatch(openModal({ modalKey: 'isConfirmDeleteModalOpen', payload: { id } }))
             }
             className={styles.deleteButton}
           >

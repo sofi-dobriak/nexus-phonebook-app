@@ -1,0 +1,20 @@
+.registerPageContainers {
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.registerTextContainer {
+  margin-bottom: 40px;
+}
+
+.registerPageTitle {
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.registerPageDesc {
+  text-align: center;
+}

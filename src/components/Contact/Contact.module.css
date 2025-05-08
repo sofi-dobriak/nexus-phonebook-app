@@ -5,8 +5,15 @@
   padding: 10px;
   border: 1px solid rgba(228, 228, 228, 0.6);
   border-radius: 8px;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.6);
   min-width: 280px;
+  transition: border-color .3s ease;
+  cursor: text;
+
+  &:hover,
+  &:focus {
+    border-color: rgba(105, 121, 248, 0.5);
+  }
 }
 
 .contactButtonContainer {
@@ -44,11 +51,21 @@
 }
 
 .editButton {
-  background-color: #00c48c;
+  background-color: #f89b69;
+
+  &:hover,
+  &:focus {
+    background-color: #f57641;
+  }
 }
 
 .deleteButton {
-  background-color: #FF647C;
+  background-color: #f86979;
+
+  &:hover,
+  &:focus {
+    background-color: #e0434c;
+  }
 }
 
 .editIcon,

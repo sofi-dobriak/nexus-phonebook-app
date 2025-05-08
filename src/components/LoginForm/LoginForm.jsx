@@ -3,6 +3,7 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { login } from '../../redux/auth/operations';
+import { Link } from 'react-router-dom';
 
 const initialValues = {
   email: '',
@@ -35,38 +36,43 @@ const LoginForm = () => {
       onSubmit={handleSubmit}
       validationSchema={validationSchema}
     >
-      <Form className={styles.form}>
-        <div className={styles.labelInputContainer}>
-          <label className={styles.label} htmlFor='email'>
-            Email
-          </label>
-          <Field
-            type='email'
-            name='email'
-            className={styles.input}
-            placeholder='mark.tven@mail.com'
-          />
-          <ErrorMessage name='email' className={styles.error} component='div' />
-        </div>
+      {({ isValid, dirty }) => (
+        <Form className={styles.form}>
+          <div className={styles.labelInputContainer}>
+            <label className={styles.label} htmlFor='email'>
+              Email
+            </label>
+            <Field
+              type='email'
+              name='email'
+              className={styles.input}
+              placeholder='mark.tven@mail.com'
+            />
+            <ErrorMessage name='email' className={styles.error} component='div' />
+          </div>
 
-        <div className={styles.labelInputContainer}>
-          <label className={styles.label} htmlFor='password'>
-            Password
-          </label>
-          <Field
-            className={styles.input}
-            type='password'
-            name='password'
-            placeholder='Enter password'
-            autoComplete='false'
-          />
-          <ErrorMessage name='password' className={styles.error} component='div' />
-        </div>
+          <div className={styles.labelInputContainer}>
+            <label className={styles.label} htmlFor='password'>
+              Password
+            </label>
+            <Field
+              className={styles.input}
+              type='password'
+              name='password'
+              placeholder='Enter password'
+              autoComplete='false'
+            />
+            <ErrorMessage name='password' className={styles.error} component='div' />
+          </div>
 
-        <button type='submit' className={styles.loginButton}>
-          Login
-        </button>
-      </Form>
+          <button type='submit' className={styles.loginButton} disabled={!(isValid && dirty)}>
+            Login
+          </button>
+          <Link to='/register' className={styles.linkToRegisterPage}>
+            Don't have an account? Sign up!
+          </Link>
+        </Form>
+      )}
     </Formik>
   );
 };

@@ -10,7 +10,11 @@ body {
   line-height: 1.5;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #0b0b0b;
+  background-image: url(/nexus-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 a {
@@ -19,9 +23,11 @@ a {
   text-decoration: inherit;
   transition: all .3s ease-in-out;
 
+
   &.active {
     color: #6979f8;
   }
+
 
   &:hover,
   &:focus {
@@ -45,7 +51,7 @@ button {
 
   &:hover,
   &:focus {
-    background-color: #95a2ff;
+    background-color: #3b448a;
   }
 }
 

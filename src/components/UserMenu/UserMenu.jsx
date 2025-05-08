@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import styles from './UserMenu.module.css';
 import { selectUser } from '../../redux/auth/selectors';
 import { logout } from '../../redux/auth/operations';
-import { PiHandWaving } from 'react-icons/pi';
 
 const UserMenu = () => {
   const dispatch = useDispatch();

@@ -2,22 +2,45 @@ import { useDispatch, useSelector } from 'react-redux';
 import styles from './DeleteConfirmModal.module.css';
 import { deleteContact } from '../../redux/contacts/operations';
 import { IoClose } from 'react-icons/io5';
-import { closeModal } from '../../redux/modals/slice';
+import { closeModal, openModal } from '../../redux/modals/slice';
 import { selectContact, selectIsConfirmDeleteModalOpen } from '../../redux/modals/selectors';
 import clsx from 'clsx';
+import { useEffect } from 'react';
 
 const DeleteConfirmModal = () => {
   const dispatch = useDispatch();
   const isOpen = useSelector(selectIsConfirmDeleteModalOpen);
   const contact = useSelector(selectContact);
+  console.log(contact);
 
   const handleDeleteContact = id => {
     dispatch(deleteContact(id));
     dispatch(closeModal('isConfirmDeleteModalOpen'));
+    dispatch(openModal({ modalKey: 'isDeleteMessageModalOpen' }));
   };
 
+  const handleWrapperClose = e => {
+    if (e.target === e.currentTarget) {
+      dispatch(closeModal('isConfirmDeleteModalOpen'));
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyDown = e => {
+      if (e.key === 'Escape') {
+        dispatch(closeModal('isConfirmDeleteModalOpen'));
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [dispatch]);
+
   return (
-    <div className={clsx(styles.confirmModalWrapper, isOpen && styles.visible)}>
+    <div
+      onClick={handleWrapperClose}
+      className={clsx(styles.confirmModalWrapper, isOpen && styles.visible)}
+    >
       <div className={styles.confirmModalWindow}>
         <button
           onClick={() => dispatch(closeModal('isConfirmDeleteModalOpen'))}

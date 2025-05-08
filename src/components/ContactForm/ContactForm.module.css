@@ -1,7 +1,7 @@
 .form {
   border: 1px solid rgba(228, 228, 228, 0.6);
   border-radius: 8px;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
   max-width: 280px;
   padding: 20px;
@@ -30,7 +30,7 @@
   color: #e4e4e4;
   border: 1px solid rgba(228, 228, 228, 0.6);
   border-radius: 8px;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 8px;
   transition: border-color .25s ease;
   margin-bottom: 4px;
@@ -54,4 +54,9 @@
 .addContatcButton {
   padding: 12px;
   min-width: 200px;
+}
+
+.addContatcButton:disabled {
+  cursor: no-drop;
+  background-color: #6E6E6E;
 }

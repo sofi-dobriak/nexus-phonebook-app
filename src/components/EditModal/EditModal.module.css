@@ -1,0 +1,99 @@
+.editModalWrapper {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 999;
+
+  background-color: #22283d4c;
+  backdrop-filter: blur(3px);
+
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transform: scale(0.95);
+  transition: all 0.3s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.editModalWindow {
+  position: relative;
+  padding: 30px;
+  padding-top: 50px;
+  width: 350px;
+  height: auto;
+  background-color: #000000;
+  border: 1px solid rgba(228, 228, 228, 0.6);
+  border-radius: 8px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+
+    .closeIcon {
+      color: #6979f8;
+    }
+  }
+
+}
+
+.closeIcon {
+  font-size: 30px;
+  transition: all .3s ease;
+}
+
+.labelInputContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.label {
+  padding-bottom: 4px;
+}
+
+.input {
+  font-family: inherit;
+  color: #e4e4e4;
+  border: 1px solid rgba(228, 228, 228, 0.6);
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 8px;
+  transition: border-color .25s ease;
+  margin-bottom: 4px;
+
+  &::placeholder {
+    font-size: 14px;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    border-color: #6979f8
+  }
+}
+
+.updateContatcButton {
+  padding: 12px;
+  min-width: 200px;
+}

@@ -8,6 +8,8 @@ const initialState = {
   isConfirmDeleteModalOpen: false,
   isUpdateContactModalOpen: false,
 
+  isMobileMenuModalOpen: false,
+
   modalData: null,
 };
 
