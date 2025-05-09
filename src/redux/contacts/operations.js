@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { toast } from 'react-hot-toast';
 import axios from 'axios';
 
 const goitAPIs = axios.create({
@@ -32,6 +33,7 @@ export const addContact = createAsyncThunk('contacts/addContact', async (newCont
     const response = await goitAPIs.post('/contacts', newContact);
     return response.data;
   } catch (error) {
+    toast.error('Oopss... Please, try again!');
     return thunkAPI.rejectWithValue(error.message);
   }
 });
@@ -45,6 +47,7 @@ export const editContact = createAsyncThunk('contacts/editContact', async (conta
     });
     return response.data;
   } catch (error) {
+    toast.error('Oopss... Please, try again!');
     return thunkAPI.rejectWithValue(error.message);
   }
 });
@@ -57,6 +60,7 @@ export const deleteContact = createAsyncThunk(
       const response = await goitAPIs.delete(`/contacts/${contactId}`);
       return response.data;
     } catch (error) {
+      toast.error('Oopss... Please, try again!');
       return thunkAPI.rejectWithValue(error.message);
     }
   }

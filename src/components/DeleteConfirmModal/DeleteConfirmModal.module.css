@@ -71,3 +71,17 @@
   padding: 12px;
   min-width: 200px;
 }
+
+@media (max-width: 375px) {
+  .confirmModalWindow {
+    width: 300px;
+  }
+
+  .closeIcon {
+    font-size: 24px;
+  }
+
+  .confirmModalTitle {
+    font-size: 16px;
+  }
+}

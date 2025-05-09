@@ -3,7 +3,6 @@ import styles from './Navigation.module.css';
 import { selecIsLoggedIn } from '../../redux/auth/selectors';
 import { NavLink } from 'react-router-dom';
 import clsx from 'clsx';
-import { useMediaQuery } from 'react-responsive';
 
 const setActiveClass = ({ isActive }) => {
   return clsx(isActive && styles.active);

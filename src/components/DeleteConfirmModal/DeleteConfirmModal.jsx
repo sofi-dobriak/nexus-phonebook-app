@@ -11,7 +11,6 @@ const DeleteConfirmModal = () => {
   const dispatch = useDispatch();
   const isOpen = useSelector(selectIsConfirmDeleteModalOpen);
   const contact = useSelector(selectContact);
-  console.log(contact);
 
   const handleDeleteContact = id => {
     dispatch(deleteContact(id));

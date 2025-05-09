@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectContact, selectIsUpdateContactModalOpen } from '../../redux/modals/selectors';
 import { closeModal, openModal } from '../../redux/modals/slice';
 import clsx from 'clsx';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 const FeedbackSchema = Yup.object().shape({
   name: Yup.string().min(2, 'Too Short!').max(16, 'Too Long!').required('Required'),
@@ -22,15 +22,15 @@ const EditModal = () => {
   const dispatch = useDispatch();
   const isOpen = useSelector(selectIsUpdateContactModalOpen);
   const contact = useSelector(selectContact);
-  const [contactData, setContactData] = useState(null);
+  const contactRef = useRef(null);
 
   useEffect(() => {
     if (contact && isOpen) {
-      setContactData({
+      contactRef.current = {
         id: contact.id,
         name: contact.name,
         number: contact.number,
-      });
+      };
     }
   }, [contact, isOpen]);
 
@@ -42,12 +42,11 @@ const EditModal = () => {
   const handleSubmit = values => {
     dispatch(
       editContact({
-        id: contactData.id,
+        id: contactRef.current.id,
         name: values.name,
         number: values.number,
       })
     );
-
     dispatch(closeModal('isUpdateContactModalOpen'));
     dispatch(openModal({ modalKey: 'isUpdateMessageModalOpen' }));
   };

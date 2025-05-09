@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import AddMessageModalOpen from '../../components/AddMessageModalOpen/AddMessageModalOpen';
 import ContactForm from '../../components/ContactForm/ContactForm';
 import ContactList from '../../components/ContactList/ContactList';
@@ -10,9 +10,13 @@ import UpdateMessageModal from '../../components/UpdateMessageModal/UpdateMessag
 import styles from './ContactsPage.module.css';
 import { useEffect } from 'react';
 import { fetchContacts } from '../../redux/contacts/operations';
+import { useMediaQuery } from 'react-responsive';
+import { selectUser } from '../../redux/auth/selectors';
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
+  const user = useSelector(selectUser);
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -20,6 +24,8 @@ const ContactsPage = () => {
 
   return (
     <div className={styles.contactFormContainer}>
+      {isMobile && <p className={styles.name}>Welcome, {user.name}</p>}
+
       <ContactForm />
       <SearchBox />
       <ContactList />

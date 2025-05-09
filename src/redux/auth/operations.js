@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { toast } from 'react-hot-toast';
 import axios from 'axios';
 
 const goitAPI = axios.create({
@@ -26,6 +27,7 @@ export const register = createAsyncThunk('auth/register', async (body, thunkAPI)
     setAuthHeader(response.data.token);
     return response.data;
   } catch (error) {
+    toast.error('Registration error!');
     return thunkAPI.rejectWithValue(error.message);
   }
 });
@@ -36,6 +38,7 @@ export const login = createAsyncThunk('auth/login', async (body, thunkAPI) => {
     setAuthHeader(response.data.token);
     return response.data;
   } catch (error) {
+    toast.error('Login error!');
     return thunkAPI.rejectWithValue(error.message);
   }
 });
@@ -45,6 +48,7 @@ export const logout = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     await goitAPI.post('/users/logout');
     clearAuthHeader();
   } catch (error) {
+    toast.error('Logout error!');
     return thunkAPI.rejectWithValue(error.message);
   }
 });
@@ -55,6 +59,7 @@ export const refreshUser = createAsyncThunk('auth/refresh', async (_, thunkAPI) 
     const response = await goitAPI.get('/users/current');
     return response.data;
   } catch (error) {
+    toast.error('Refresh error!');
     return thunkAPI.rejectWithValue(error.message);
   }
 });

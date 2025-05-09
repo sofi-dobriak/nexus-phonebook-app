@@ -30,8 +30,6 @@ const ContactForm = () => {
       })
     );
 
-    console.log('Added:', values);
-
     dispatch(openModal({ modalKey: 'isAddMessageModalOpen' }));
     actions.resetForm();
   };
