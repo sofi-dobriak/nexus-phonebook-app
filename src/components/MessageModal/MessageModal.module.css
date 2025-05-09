@@ -2,12 +2,15 @@
   position: fixed;
   top: -100%;
   left: 50%;
+  width: 100%;
+  max-width: 260px;
   transform: translateX(-50%);
   background-color: #3b448a;
   border-radius: 4px;
   padding: 10px;
   z-index: 999;
   transition: top .25s ease;
+  text-align: center;
 }
 
 .visible {
