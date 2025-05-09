@@ -2,8 +2,8 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #101216b2;
-  backdrop-filter: blur(3px);
+  background-color: var(--header-bg-color);
+  backdrop-filter: var(--bg-blur);
 
 }
 

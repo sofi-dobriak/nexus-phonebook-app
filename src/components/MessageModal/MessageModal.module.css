@@ -5,7 +5,7 @@
   width: 100%;
   max-width: 260px;
   transform: translateX(-50%);
-  background-color: #3b448a;
+  background-color: var(--hover-button-bg-color);
   border-radius: 4px;
   padding: 10px;
   z-index: 999;

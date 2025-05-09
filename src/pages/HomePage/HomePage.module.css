@@ -32,13 +32,13 @@
 }
 
 .infiniteIcon {
-  color: #6979f8;
+  color: var(--hover-box-border-color);
   padding-top: 4px;
   font-size: 20px;
 }
 
 .appNameDesc {
-  border-left: 2px solid #6979f8;
+  border-left: 2px solid var(--hover-box-border-color);
   border-radius: 1px;
   padding-left: 12px;
 }
@@ -50,7 +50,7 @@
 
 .stayInTouchContainer {
   padding-bottom: 30px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.87);
+  border-bottom: 1px solid var(--box-border-color);
   max-width: 900px;
   margin: 0 auto;
   margin-bottom: 30px;

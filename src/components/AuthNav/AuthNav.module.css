@@ -5,5 +5,5 @@
 }
 
 .active {
-  color: #6979f8;
+  color: var(--active-link-color);
 }

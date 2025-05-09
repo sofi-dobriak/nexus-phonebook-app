@@ -5,16 +5,9 @@
   padding-right: 14px;
   padding-bottom: 16px;
   padding-top: 8px;
-  border: 1px solid rgba(228, 228, 228, 0.6);
+  border: 1px solid var(--box-border-color);
   border-radius: 8px;
   margin-bottom: 30px;
-}
-
-@media (max-width: 768px) {
-  .searchFormSection {
-    flex-direction: column;
-    align-items: center;
-  }
 }
 
 .labelInputContainer {
@@ -29,8 +22,8 @@
 .input {
   font-family: inherit;
   color: #e4e4e4;
-  border: 1px solid rgba(228, 228, 228, 0.6);
-  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--box-border-color);
+  background-color: var(--box-bg-color);
   border-radius: 8px;
   padding: 8px;
   transition: border-color .25s ease;
@@ -43,11 +36,16 @@
   &:hover,
   &:focus {
     outline: none;
-    border-color: #6979f8
+    border-color: var(--hover-box-border-color)
   }
 }
 
 @media (max-width: 768px) {
+  .searchFormSection {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .input {
     min-width: 244px;
   }

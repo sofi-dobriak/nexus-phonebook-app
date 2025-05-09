@@ -8,7 +8,7 @@
 
   z-index: 999;
 
-  background-color: #22283d4c;
+  background-color: var(--modal-wrapper-bg-color);
   backdrop-filter: blur(3px);
 
   opacity: 0;
@@ -31,8 +31,8 @@
   padding-top: 50px;
   width: 350px;
   height: auto;
-  background-color: #000000;
-  border: 1px solid rgba(228, 228, 228, 0.6);
+  background-color: var(--modal-window-bg-color);
+  border: 1px solid var(--box-border-color);
   border-radius: 8px;
 }
 
@@ -51,7 +51,7 @@
     background-color: transparent;
 
     .closeIcon {
-      color: #6979f8;
+      color: var(--hover-button-bg-color);
     }
   }
 
@@ -75,9 +75,9 @@
 .input {
   font-family: inherit;
   color: #e4e4e4;
-  border: 1px solid rgba(228, 228, 228, 0.6);
+  border: 1px solid var(--box-border-color);
   border-radius: 8px;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: var(--box-bg-color);
   padding: 8px;
   transition: border-color .25s ease;
   margin-bottom: 4px;
@@ -89,7 +89,7 @@
   &:hover,
   &:focus {
     outline: none;
-    border-color: #6979f8
+    border-color: var(--hover-box-border-color)
   }
 }
 

@@ -1,17 +1,11 @@
 .form {
-  border: 1px solid rgba(228, 228, 228, 0.6);
+  border: 1px solid var(--box-border-color);
   border-radius: 8px;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: var(--box-bg-color);
   width: 100%;
   max-width: 280px;
   padding: 20px;
   margin-bottom: 30px;
-}
-
-@media (max-width: 425px) {
-  .form {
-    margin: 0 auto 30px;
-  }
 }
 
 .labelInputContainer {
@@ -26,8 +20,8 @@
 
 .input {
   font-family: inherit;
-  color: #e4e4e4;
-  border: 1px solid rgba(228, 228, 228, 0.6);
+  color: var(--text-color);
+  border: 1px solid var(--box-border-color);
   border-radius: 8px;
   background-color: transparent;
   padding: 8px;
@@ -40,12 +34,12 @@
   &:hover,
   &:focus {
     outline: none;
-    border-color: #6979f8
+    border-color: var(--hover-box-border-color)
   }
 }
 
 .error {
-  color: #ff647c;
+  color: var(--error-message-color);
   font-size: 12px;
 }
 
@@ -60,10 +54,9 @@
 
   &:disabled {
     cursor: no-drop;
-    background-color: #6E6E6E;
+    background-color: var(--disabled-button-bg-color);
   }
 }
-
 
 .linkToLoginPage {
   display: flex;
@@ -72,4 +65,10 @@
   text-decoration: underline;
   text-underline-offset: 2px;
   color: inherit;
+}
+
+@media (max-width: 425px) {
+  .form {
+    margin: 0 auto 30px;
+  }
 }

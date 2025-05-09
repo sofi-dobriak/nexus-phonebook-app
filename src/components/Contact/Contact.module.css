@@ -3,16 +3,16 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  border: 1px solid rgba(228, 228, 228, 0.6);
+  border: 1px solid var(--box-border-color);
   border-radius: 8px;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: var(--box-bg-color);
   min-width: 280px;
   transition: border-color .3s ease;
   cursor: text;
 
   &:hover,
   &:focus {
-    border-color: rgba(105, 121, 248, 0.5);
+    border-color: var(--hover-box-border-color);
   }
 }
 
@@ -51,20 +51,20 @@
 }
 
 .editButton {
-  background-color: #f89b69;
+  background-color: var(--edit-button-bg);
 
   &:hover,
   &:focus {
-    background-color: #f57641;
+    background-color: var(--hover-edit-button-bg);
   }
 }
 
 .deleteButton {
-  background-color: #f86979;
+  background-color: var(--delete-button-bg);
 
   &:hover,
   &:focus {
-    background-color: #e0434c;
+    background-color: var(--hover-delete-button-bg);
   }
 }
 

@@ -1,15 +1,71 @@
 @import './reset.css';
 
+@font-face {
+  font-display: swap;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/montserrat-v29-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./assets/fonts/montserrat-v29-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./assets/fonts/montserrat-v29-latin-600.woff2') format('woff2');
+}
+
 * {
   box-sizing: border-box;
 }
 
+:root {
+  --font-family: 'Montserrat', sans-serif;
+  --line-height: 1.5;
+  --text-color: rgba(255, 255, 255, 0.87);
+
+  --active-link-color: #6979f8;
+  --hover-link-color: #535bf2;
+
+  --button-bg-color: #6979f8;
+  --hover-button-bg-color: #3b448a;
+  --disabled-button-bg-color: #6E6E6E;
+
+  --header-bg-color: #101216b2;
+
+  --bg-blur: blur(3px);
+
+  --box-bg-color: rgba(0, 0, 0, 0.6);
+  --box-border-color: rgba(228, 228, 228, 0.6);
+  --hover-box-border-color: rgba(105, 122, 248, 0.7);
+
+  --edit-button-bg: #f89b69;
+  --hover-edit-button-bg: #f57641;
+
+  --delete-button-bg: #f86979;
+  --hover-delete-button-bg: #e0434c;
+
+  --error-message-color: #ff647c;
+
+  --modal-wrapper-bg-color: #22283d4c;
+  --modal-window-bg-color: #000000;
+}
+
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.87);
+  font-family: var(--font-family);
+  line-height: var(--line-height);
+  color: var(--text-color);
+
   background-image: url(/nexus-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,19 +75,19 @@ body {
 
 a {
   font-weight: 500;
-  color: #fff;
+  color: inherit;
   text-decoration: inherit;
   transition: all .3s ease-in-out;
 
 
   &.active {
-    color: #6979f8;
+    color: var(--active-link-color);
   }
 
 
   &:hover,
   &:focus {
-    color: #535bf2;
+    color: var(--hover-link-color);
   }
 }
 
@@ -44,14 +100,14 @@ button {
   cursor: pointer;
   transition: all 0.25s ease;
 
-  background-color: #6979f8;
-  color: #fff;
+  background-color: var(--button-bg-color);
+  color: inherit;
   margin: 0 auto;
   display: block;
 
   &:hover,
   &:focus {
-    background-color: #3b448a;
+    background-color: var(--hover-button-bg-color);
   }
 }
 
