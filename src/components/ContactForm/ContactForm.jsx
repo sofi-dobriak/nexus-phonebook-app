@@ -40,7 +40,7 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       validationSchema={FeedbackSchema}
     >
-      {({ isValid, dirty }) => (
+      {({ dirty }) => (
         <Form className={styles.form}>
           <div className={styles.labelInputContainer}>
             <label className={styles.label} htmlFor='name'>
@@ -58,7 +58,7 @@ const ContactForm = () => {
             <ErrorMessage name='number' component='span' className={styles.error} />
           </div>
 
-          <button type='submit' className={styles.addContatcButton} disabled={!(isValid && dirty)}>
+          <button type='submit' className={styles.addContatcButton} disabled={!dirty}>
             Add contact
           </button>
         </Form>

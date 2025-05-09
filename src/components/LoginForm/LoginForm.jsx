@@ -36,7 +36,7 @@ const LoginForm = () => {
       onSubmit={handleSubmit}
       validationSchema={validationSchema}
     >
-      {({ isValid, dirty }) => (
+      {({ dirty }) => (
         <Form className={styles.form}>
           <div className={styles.labelInputContainer}>
             <label className={styles.label} htmlFor='email'>
@@ -65,7 +65,7 @@ const LoginForm = () => {
             <ErrorMessage name='password' className={styles.error} component='div' />
           </div>
 
-          <button type='submit' className={styles.loginButton} disabled={!(isValid && dirty)}>
+          <button type='submit' className={styles.loginButton} disabled={!dirty}>
             Login
           </button>
           <Link to='/register' className={styles.linkToRegisterPage}>

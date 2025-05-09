@@ -40,7 +40,7 @@ const RegistrationForm = () => {
       onSubmit={handleSubmit}
       validationSchema={validationSchema}
     >
-      {({ isValid, dirty }) => (
+      {({ dirty }) => (
         <Form className={styles.form}>
           <div className={styles.labelInputContainer}>
             <label className={styles.label} htmlFor='username'>
@@ -77,7 +77,7 @@ const RegistrationForm = () => {
             <ErrorMessage name='password' className={styles.error} component='div' />
           </div>
 
-          <button type='submit' className={styles.registerButton} disabled={!(isValid && dirty)}>
+          <button type='submit' className={styles.registerButton} disabled={!dirty}>
             Register
           </button>
 
