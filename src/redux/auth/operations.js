@@ -59,7 +59,6 @@ export const refreshUser = createAsyncThunk('auth/refresh', async (_, thunkAPI) 
     const response = await goitAPI.get('/users/current');
     return response.data;
   } catch (error) {
-    toast.error('Refresh error!');
     return thunkAPI.rejectWithValue(error.message);
   }
 });
