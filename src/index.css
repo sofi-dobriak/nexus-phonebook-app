@@ -33,7 +33,7 @@
   --line-height: 1.5;
   --text-color: rgba(255, 255, 255, 0.87);
 
-  --active-link-color: #6979f8;
+  --active-link-color: #80CFFF;
   --hover-link-color: #535bf2;
 
   --button-bg-color: #6979f8;
@@ -57,7 +57,9 @@
   --error-message-color: #ff647c;
 
   --modal-wrapper-bg-color: #22283d4c;
-  --modal-window-bg-color: #000000;
+  --modal-window-bg-color: #000;
+
+  --message-modal-bg-color: #2C223F;
 }
 
 
@@ -87,7 +89,7 @@ a {
 
   &:hover,
   &:focus {
-    color: var(--hover-link-color);
+    color: var(--active-link-color);
   }
 }
 

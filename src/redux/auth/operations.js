@@ -2,11 +2,11 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-hot-toast';
 import axios from 'axios';
 
-const goitAPI = axios.create({
+export const goitAPI = axios.create({
   baseURL: 'https://connections-api.goit.global',
 });
 
-const setAuthHeader = token => {
+export const setAuthHeader = token => {
   goitAPI.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 

@@ -3,9 +3,10 @@
   top: -100%;
   left: 50%;
   width: 100%;
-  max-width: 260px;
+  max-width: 310px;
   transform: translateX(-50%);
-  background-color: var(--hover-button-bg-color);
+  background-color: var(--message-modal-bg-color);
+  color: var(--text-color);
   border-radius: 4px;
   padding: 10px;
   z-index: 999;
@@ -14,5 +15,5 @@
 }
 
 .visible {
-  top: 40px;
+  top: 20px;
 }

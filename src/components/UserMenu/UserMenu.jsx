@@ -7,11 +7,11 @@ import { useMediaQuery } from 'react-responsive';
 const UserMenu = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
-  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isDesctop = useMediaQuery({ maxWidth: 1200 });
 
   return (
     <div className={styles.userMenuContainer}>
-      {!isMobile && <p className={styles.name}>Welcome, {user.name}</p>}
+      {!isDesctop && <p className={styles.name}>Welcome, {user.name}</p>}
 
       <button onClick={() => dispatch(logout())} type='button' className={styles.logOutButton}>
         Log out

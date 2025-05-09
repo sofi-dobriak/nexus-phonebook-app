@@ -6,4 +6,6 @@
 
 .active {
   color: var(--active-link-color);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }

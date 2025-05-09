@@ -16,7 +16,7 @@ import { selectUser } from '../../redux/auth/selectors';
 const ContactsPage = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
-  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isTablet = useMediaQuery({ maxWidth: 1200 });
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -24,7 +24,7 @@ const ContactsPage = () => {
 
   return (
     <div className={styles.contactFormContainer}>
-      {isMobile && <p className={styles.name}>Welcome, {user.name}</p>}
+      {isTablet && <p className={styles.name}>Welcome, {user.name}</p>}
 
       <ContactForm />
       <SearchBox />
