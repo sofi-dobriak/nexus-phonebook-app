@@ -1,29 +1,54 @@
-# Phonebook App
+# 💫 Nexus — Phonebook App
 
-This application allows you to store and manage your contacts. It offers several useful features for working with contacts.
+✨ Your constellation of connections
 
-## Features:
+---
 
-1. **Add Contacts**
+## 📄 Pages
 
-   - You can add new contacts by providing a name and phone number.
-   - [Yup](https://github.com/jquense/yup) library is used for validation:
-     - Name must be between 2 to 16 characters.
-     - Phone number can only contain digits and can be separated by dashes (using a regular expression).
+### 🔸 Home
 
-2. **Search Contacts by Name**
+Short project overview, idea behind the app, and my contact info.  
+Login credentials are provided if you'd rather not register 😉
 
-   - You can search for contacts by name.
+### 🔸 Register
 
-3. **Delete Contacts**
+A simple form requiring name, email, and password.  
+Already have an account? Jump to login.
 
-   - You can delete contacts from the phonebook.
+### 🔸 Login
 
-## Technologies:
+Log in using the email and password you registered with.  
+Don't have an account yet? Head to registration.
 
-- **React** for building the interface.
-- **Formik** for handling forms.
-- **Yup** for validation.
-- **Redux** and **Redux** Toolkit for managing global state.
-- [**mockapi.io**](https://mockapi.io/projects) as a backend
-- **Axios** for implementing server requests
+---
+
+## 📱 Inside the App
+
+- **Add Contacts**  
+  Add a new contact by entering a name and phone number.  
+  Validated using [Yup](https://github.com/jquense/yup):
+
+  - Name: 2-16 characters
+  - Phone: digits only, dashes allowed
+
+- **Search Contacts**  
+  By name or phone number
+
+- **Delete Contact**  
+  With confirmation in a modal
+
+- **Edit Contact**  
+  Opens a modal pre-filled with the current data
+
+---
+
+## ⚙️ Tech Stack
+
+- **React** — UI
+- **Formik** — form state
+- **Yup** — input validation
+- **Redux Toolkit** — state management
+- **Axios** — HTTP requests
+- **Swagger Contacts API** — backend
+- **React-responsive** — adaptive styles
