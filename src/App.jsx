@@ -4,7 +4,6 @@ import { selectIsRefreshing } from './redux/auth/selectors';
 import { refreshUser } from './redux/auth/operations';
 import Layout from './components/Layout/Layout';
 import RoutesList from './components/RoutesList/RoutesList';
-import BackToTopButton from './components/BackToTopButton/BackToTopButton';
 
 function App() {
   const dispatch = useDispatch();
@@ -18,8 +17,6 @@ function App() {
     <>
       <Layout />
       <RoutesList />
-
-      <BackToTopButton />
     </>
   );
 }

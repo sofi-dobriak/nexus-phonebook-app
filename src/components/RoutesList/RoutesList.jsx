@@ -4,6 +4,7 @@ import RestrictedRoute from '../RestrictedRoute/RestrictedRoute';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import NotFound from '../NotFound/NotFound';
 import Container from '../Container/Container';
+import BackToTopButton from '../BackToTopButton/BackToTopButton';
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
 const RegistrationPage = lazy(() => import('../../pages/RegistrationPage/RegistrationPage'));
@@ -31,6 +32,7 @@ const RoutesList = () => {
           <Route path='*' element={<NotFound />} />
         </Routes>
       </Suspense>
+      <BackToTopButton />
     </Container>
   );
 };
