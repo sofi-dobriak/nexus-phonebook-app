@@ -55,7 +55,7 @@ const HomePage = () => {
         </div>
       </div>
       <p className={styles.postScriptum}>
-        PS. If you do not want to register, but want to see the application from the inside, just
+        P.S. If you do not want to register, but want to see the application from the inside, just
         enter <strong>guest123@mail.com</strong> as your email and password in the{' '}
         <Link to='/login' className={styles.toLoginPageLink}>
           login form
