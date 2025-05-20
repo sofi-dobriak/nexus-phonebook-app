@@ -32,6 +32,7 @@ const RoutesList = () => {
           <Route path='*' element={<NotFound />} />
         </Routes>
       </Suspense>
+
       <BackToTopButton />
     </Container>
   );
