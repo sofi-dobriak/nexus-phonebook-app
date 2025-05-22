@@ -62,7 +62,7 @@ Don't have an account yet? Head to registration.
 [Demo](https://lensea-search-images-txbjzlz14-sofis-projects-f6b2a04f.vercel.app/) |
 [Github](https://github.com/sofi-dobriak/lensea-search-images-app)
 
-### 🎬🔍 Nightframe — search movies app
+### 🎬🔍 Movies finder app
 
-[Demo]() |
-[Github]()
+[Demo](https://movie-finder-app-three.vercel.app/) |
+[Github](https://github.com/sofi-dobriak/movie-finder-app)
