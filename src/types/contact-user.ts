@@ -5,6 +5,6 @@ export interface User {
 
 export interface Contact {
   id?: number;
-  name: string | undefined;
-  number: string | undefined;
+  name: string;
+  number: string;
 }

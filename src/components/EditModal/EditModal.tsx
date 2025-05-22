@@ -26,7 +26,7 @@ const EditModal = () => {
   const contactRef = useRef<Contact | null>(null);
 
   useEffect(() => {
-    if (contact && isOpen) {
+    if (contact && isOpen && contact.name && contact.number) {
       contactRef.current = {
         id: contact.id,
         name: contact.name,
