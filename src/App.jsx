@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsRefreshing } from './redux/auth/selectors';
 import { refreshUser } from './redux/auth/operations';
-import Layout from './components/Layout/Layout';
+import Layout from './components/Layout/Layout.tsx';
 import RoutesList from './components/RoutesList/RoutesList';
 
 function App() {
