@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import { addContact } from '../../redux/contacts/operations';
 import { openModal } from '../../redux/modals/slice';
 import { useAppDispatch } from '../../redux/hooks';
+import { ContactFormValues, ContactFormInitialValues } from '../../types/contact';
 
 const FeedbackSchema = Yup.object().shape({
   name: Yup.string().min(2, 'Too Short!').max(16, 'Too Long!').required('Required'),
@@ -14,17 +15,7 @@ const FeedbackSchema = Yup.object().shape({
     .required('Required'),
 });
 
-interface IntialValuesInterface {
-  name: string;
-  number: string;
-}
-
-interface FormValues {
-  name: string;
-  number: string;
-}
-
-const initializedValue: IntialValuesInterface = {
+const initializedValue: ContactFormInitialValues = {
   name: '',
   number: '',
 };
@@ -32,7 +23,10 @@ const initializedValue: IntialValuesInterface = {
 const ContactForm = () => {
   const dispatch = useAppDispatch();
 
-  const handleSubmit = (values: FormValues, actions: FormikHelpers<FormValues>): void => {
+  const handleSubmit = (
+    values: ContactFormValues,
+    actions: FormikHelpers<ContactFormValues>
+  ): void => {
     dispatch(
       addContact({
         name: values.name,

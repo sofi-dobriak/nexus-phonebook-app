@@ -9,17 +9,17 @@ import {
   ThunkConfig,
 } from '../../types/API-responses';
 import { RootState } from '../store';
-import { User } from '../../types/contact-user';
+import { User } from '../../types/user';
 
 export const goitAPI = axios.create({
   baseURL: 'https://connections-api.goit.global',
 });
 
-export const setAuthHeader = (token: string) => {
+export const setAuthHeader = (token: string): void => {
   goitAPI.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
-const clearAuthHeader = () => {
+const clearAuthHeader = (): void => {
   goitAPI.defaults.headers.common.Authorization = '';
 };
 
@@ -34,7 +34,7 @@ export const register = createAsyncThunk<AuthResponse, RegisterRequest, ThunkCon
   'auth/register',
   async (body, thunkAPI) => {
     try {
-      const response = await goitAPI.post('/users/signup', body);
+      const response = await goitAPI.post<AuthResponse>('/users/signup', body);
       setAuthHeader(response.data.token);
       return response.data;
     } catch (err) {
@@ -51,7 +51,7 @@ export const login = createAsyncThunk<AuthResponse, LoginRequest, ThunkConfig>(
   'auth/login',
   async (body, thunkAPI) => {
     try {
-      const response = await goitAPI.post('/users/login', body);
+      const response = await goitAPI.post<AuthResponse>('/users/login', body);
       setAuthHeader(response.data.token);
       return response.data;
     } catch (err) {
@@ -85,7 +85,7 @@ export const refreshUser = createAsyncThunk<User, void, ThunkConfig>(
   async (_, thunkAPI) => {
     try {
       prepareAuth(thunkAPI as { getState: () => RootState });
-      const response = await goitAPI.get('/users/current');
+      const response = await goitAPI.get<User>('/users/current');
       return response.data;
     } catch (err) {
       const error = err as AxiosError<ErrorResponse>;

@@ -4,16 +4,7 @@ import * as Yup from 'yup';
 import { login } from '../../redux/auth/operations';
 import { Link } from 'react-router-dom';
 import { useAppDispatch } from '../../redux/hooks';
-
-interface InitialValues {
-  email: string;
-  password: string;
-}
-
-const initialValues: InitialValues = {
-  email: '',
-  password: '',
-};
+import { LoginFormInitialValues, LoginFormValues } from '../../types/user';
 
 const emailRegular = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -22,15 +13,15 @@ const validationSchema = Yup.object().shape({
   password: Yup.string().min(7, 'Minimum 7 characters').required('Required'),
 });
 
-interface FormValues {
-  email: string;
-  password: string;
-}
+const initialValues: LoginFormInitialValues = {
+  email: '',
+  password: '',
+};
 
 const LoginForm = () => {
   const dispatch = useAppDispatch();
 
-  const handleSubmit = (values: FormValues, action: FormikHelpers<FormValues>) => {
+  const handleSubmit = (values: LoginFormValues, action: FormikHelpers<LoginFormValues>) => {
     const newContact = {
       email: values.email,
       password: values.password,

@@ -1,7 +1,7 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { fetchContacts, addContact, deleteContact, editContact } from './operations';
 import { logout } from '../auth/operations';
-import { Contact } from '../../types/contact-user';
+import { Contact } from '../../types/user';
 import { ErrorResponse } from '../../types/API-responses';
 
 interface initialState {

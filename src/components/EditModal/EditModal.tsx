@@ -8,7 +8,7 @@ import { closeModal, openModal } from '../../redux/modals/slice';
 import clsx from 'clsx';
 import { useEffect, useRef } from 'react';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
-import { Contact } from '../../types/contact-user';
+import { Contact, EditContactFormInitialValues, EditContactFormValues } from '../../types/contact';
 
 const FeedbackSchema = Yup.object().shape({
   name: Yup.string().min(2, 'Too Short!').max(16, 'Too Long!').required('Required'),
@@ -35,18 +35,12 @@ const EditModal = () => {
     }
   }, [contact, isOpen]);
 
-  const initializedValue = {
+  const initializedValue: EditContactFormInitialValues = {
     name: contact?.name || '',
     number: contact?.number || '',
   };
 
-  interface FormSubmitValue {
-    id?: number;
-    name: string;
-    number: string;
-  }
-
-  const handleSubmit = (values: FormSubmitValue): void => {
+  const handleSubmit = (values: EditContactFormValues): void => {
     const id = contactRef.current?.id;
     if (!id) return;
 

@@ -1,12 +1,8 @@
-import { User } from './contact-user';
+import { User } from './user';
 
 export interface AuthResponse {
   user: User;
   token: string;
-}
-
-export interface RegisterRequest extends LoginRequest {
-  name: string;
 }
 
 export interface LoginRequest {
@@ -14,12 +10,8 @@ export interface LoginRequest {
   password: string;
 }
 
-export interface ErrorResponse {
-  message: string;
-}
-
-export interface ThunkConfig {
-  rejectValue: ErrorResponse;
+export interface RegisterRequest extends LoginRequest {
+  name: string;
 }
 
 export interface PostContact {
@@ -29,4 +21,12 @@ export interface PostContact {
 
 export interface UpdateContact extends PostContact {
   id: number;
+}
+
+export interface ErrorResponse {
+  message: string;
+}
+
+export interface ThunkConfig {
+  rejectValue: ErrorResponse;
 }

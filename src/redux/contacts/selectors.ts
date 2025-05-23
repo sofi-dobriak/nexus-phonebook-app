@@ -1,7 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { selectNameFilter, selectPhoneFilter } from '../filters/selectors';
 import { RootState } from '../store';
-import { Contact } from '../../types/contact-user';
+import { Contact } from '../../types/user';
 
 export const selectContacts = (state: RootState) => state.contacts.contacts;
 export const selectIsLoading = (state: RootState) => state.contacts.isLoading;

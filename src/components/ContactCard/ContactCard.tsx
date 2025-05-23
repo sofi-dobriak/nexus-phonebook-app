@@ -5,7 +5,7 @@ import { FaTrash } from 'react-icons/fa6';
 import { MdEdit } from 'react-icons/md';
 import { openModal } from '../../redux/modals/slice';
 import { useAppDispatch } from '../../redux/hooks';
-import { Contact } from '../../types/contact-user';
+import { Contact } from '../../types/contact';
 
 const ContactCard = ({ id, name, number }: Contact) => {
   const dispatch = useAppDispatch();

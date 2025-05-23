@@ -1,5 +1,5 @@
 import styles from './Navigation.module.css';
-import { selecIsLoggedIn } from '../../redux/auth/selectors';
+import { selectIsLoggedIn } from '../../redux/auth/selectors';
 import { NavLink } from 'react-router-dom';
 import clsx from 'clsx';
 import { useAppSelector } from '../../redux/hooks';
@@ -13,7 +13,7 @@ const setActiveClass = ({ isActive }: ActiveClassProps) => {
 };
 
 const Navigation = () => {
-  const isLoggedIn = useAppSelector(selecIsLoggedIn);
+  const isLoggedIn = useAppSelector(selectIsLoggedIn);
 
   return (
     <nav className={styles.navigationContainer}>

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { Contact } from '../../types/contact-user';
+import { Contact } from '../../types/user';
 
 const initialState: Contact = {
   name: '',
