@@ -3,7 +3,7 @@ import { toast } from 'react-hot-toast';
 import { goitAPI } from '../auth/operations';
 import { AxiosError } from 'axios';
 import { ErrorResponse, PostContact, UpdateContact, ThunkConfig } from '../../types/API-responses';
-import { Contact } from '../../types/user';
+import { Contact } from '../../types/contact';
 
 export const fetchContacts = createAsyncThunk<Contact[], void, ThunkConfig>(
   'contacts/fetchAll',
