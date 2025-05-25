@@ -9,18 +9,14 @@ export interface ContactFormValues {
   number: string;
 }
 
-export interface ContactFormInitialValues {
-  name: string;
-  number: string;
-}
+export interface ContactFormInitialValues extends ContactFormValues {}
 
-export interface EditContactFormValues {
+export interface EditContactFormValues extends ContactFormValues {
   id?: number;
-  name: string;
-  number: string;
 }
 
-export interface EditContactFormInitialValues {
-  name: string;
-  number: string;
+export interface EditContactFormInitialValues extends ContactFormValues {}
+
+export interface DeleteContact {
+  id: number;
 }

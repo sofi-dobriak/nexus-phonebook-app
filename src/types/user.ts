@@ -8,19 +8,10 @@ export interface LoginFormValues {
   password: string;
 }
 
-export interface LoginFormInitialValues {
-  email: string;
-  password: string;
+export interface LoginFormInitialValues extends LoginFormValues {}
+
+export interface RegisterFormValues extends LoginFormValues {
+  name: string;
 }
 
-export interface RegisterFormValues {
-  name: string;
-  email: string;
-  password: string;
-}
-
-export interface RegisterFormInitialValues {
-  name: string;
-  email: string;
-  password: string;
-}
+export interface RegisterFormInitialValues extends RegisterFormValues {}
