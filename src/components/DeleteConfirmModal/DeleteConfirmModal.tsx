@@ -13,7 +13,7 @@ const DeleteConfirmModal = () => {
   const contact = useAppSelector(selectContact);
 
   const handleDeleteContact = (id: number): void => {
-    dispatch(deleteContact(id));
+    dispatch(deleteContact({ id }));
     dispatch(closeModal('isConfirmDeleteModalOpen'));
     dispatch(openModal({ modalKey: 'isDeleteMessageModalOpen' }));
   };

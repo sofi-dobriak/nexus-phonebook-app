@@ -57,9 +57,9 @@ export const editContact = createAsyncThunk<Contact, UpdateContact, ThunkConfig>
 
 export const deleteContact = createAsyncThunk<Contact, DeleteContact, ThunkConfig>(
   'contacts/deleteContact',
-  async (contactId, thunkAPI) => {
+  async ({ id }, thunkAPI) => {
     try {
-      const response = await goitAPI.delete<Contact>(`/contacts/${contactId}`);
+      const response = await goitAPI.delete<Contact>(`/contacts/${id}`);
       return response.data;
     } catch (err) {
       const error = err as AxiosError<ErrorResponse>;
