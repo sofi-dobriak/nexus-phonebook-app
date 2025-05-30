@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Contact } from '../../types/contact';
 
 const initialState: Contact = {
@@ -10,10 +10,10 @@ const slice = createSlice({
   name: 'filters',
   initialState,
   reducers: {
-    changeFilterName: (state, action) => {
+    changeFilterName: (state, action: PayloadAction<string>) => {
       state.name = action.payload;
     },
-    changeFilterPhone: (state, action) => {
+    changeFilterPhone: (state, action: PayloadAction<string>) => {
       state.number = action.payload;
     },
   },

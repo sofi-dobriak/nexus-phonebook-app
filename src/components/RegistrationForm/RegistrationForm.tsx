@@ -46,7 +46,7 @@ const RegistrationForm = () => {
             <label className={styles.label} htmlFor='username'>
               Username
             </label>
-            <Field className={styles.input} type='text' name='username' placeholder='Mark Tven' />
+            <Field className={styles.input} type='text' name='name' placeholder='Mark Tven' />
             <ErrorMessage name='name' className={styles.error} component='div' />
           </div>
 
