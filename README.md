@@ -59,7 +59,7 @@ Don't have an account yet? Head to registration.
 
 ### 🔎📷 Lensea — search images app
 
-[Demo](https://lensea-search-images-txbjzlz14-sofis-projects-f6b2a04f.vercel.app/) |
+[Demo](https://lensea-search-images-app.vercel.app/) |
 [Github](https://github.com/sofi-dobriak/lensea-search-images-app)
 
 ### 🎬🔍 Movies finder app
