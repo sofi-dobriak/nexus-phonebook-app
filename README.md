@@ -2,6 +2,8 @@
 
 ✨ Your constellation of connections
 
+🔗 [Live Demo](https://nexus-phonebook-app.vercel.app/)  
+
 ---
 
 ## 📄 Pages
@@ -11,15 +13,21 @@
 Short project overview, idea behind the app, and my contact info.  
 Login credentials are provided if you'd rather not register 😉
 
+![Home page](./public/nexus-home.png)
+
 ### 🔸 Register
 
 A simple form requiring name, email, and password.  
 Already have an account? Jump to login.
 
+![Register page](./public/nexus-register.png)
+
 ### 🔸 Login
 
 Log in using the email and password you registered with.  
 Don't have an account yet? Head to registration.
+
+![Login page](./public/nexus-login.png)
 
 ---
 
@@ -35,11 +43,19 @@ Don't have an account yet? Head to registration.
 - **Search Contacts**  
   By name or phone number
 
-- **Delete Contact**  
-  With confirmation in a modal
+![Inside the app](./public/nexus-inside.png)
 
 - **Edit Contact**  
   Opens a modal pre-filled with the current data
+
+![Edit modal](./public/nexus-edit.png)
+
+- **Delete Contact**  
+  With confirmation in a modal
+
+![Delete modal](./public/nexus-delete.png)
+
+
 
 ---
 
@@ -55,6 +71,27 @@ Don't have an account yet? Head to registration.
 
 ---
 
+## 🚀 Run Locally
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/sofi-dobriak/nexus-phonebook-app.git
+2. Navigate to the project folder:
+    ```bash
+    cd nexus-phonebook-app
+3. Install dependencies:
+    ```bash
+    npm install
+4. Start the development server:
+    ```bash
+    npm run dev
+
+5. Open in your browser:
+    ```bash
+    http://localhost:5173
+
+---
+
 ## 💻 My other projects
 
 ### 🔎📷 Lensea — search images app
@@ -66,3 +103,7 @@ Don't have an account yet? Head to registration.
 
 [Demo](https://movie-finder-app-three.vercel.app/) |
 [Github](https://github.com/sofi-dobriak/movie-finder-app)
+
+---
+
+👩‍💻 Author: Sofi Dobriak
