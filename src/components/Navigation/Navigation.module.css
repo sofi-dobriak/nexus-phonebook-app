@@ -2,6 +2,11 @@
   display: flex;
   align-items: center;
   gap: 20px;
+
+
+  & a {
+    padding: 20px 0;
+  }
 }
 
 .active {
