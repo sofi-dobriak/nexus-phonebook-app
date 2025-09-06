@@ -3,7 +3,7 @@ import styles from './LoginPage.module.css';
 
 const LoginPage = () => {
   return (
-    <div className={styles.loginPageContainer}>
+    <div className={styles.loginPageContainer} data-aos='zoom-in'>
       <div className={styles.loginTextContainer}>
         <h2 className={styles.loginPageTitle}>Welcome back!</h2>
         <p className={styles.loginPageDesc}>Please enter your credentials to access your account</p>

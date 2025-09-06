@@ -4,7 +4,7 @@ import { IoInfinite } from 'react-icons/io5';
 
 const HomePage = () => {
   return (
-    <>
+    <div data-aos='fade-up'>
       <div className={styles.container}>
         <div>
           <h1 className={styles.title}>Welcome to Nexus!</h1>
@@ -61,7 +61,7 @@ const HomePage = () => {
           login form
         </Link>
       </p>
-    </>
+    </div>
   );
 };
 
